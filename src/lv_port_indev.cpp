@@ -78,4 +78,5 @@ static void encoder_read(lv_indev_t *indev_drv, lv_indev_data_t *data)
 {
     data->enc_diff = encoder.getCount(true);
     data->state = M5.BtnA.isPressed() ? LV_INDEV_STATE_PR : LV_INDEV_STATE_REL;
+    data->key = LV_KEY_ENTER;
 }

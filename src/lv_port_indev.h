@@ -5,7 +5,8 @@
 #define LV_PORT_INDEV_H
 
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
 #if defined(LV_LVGL_H_INCLUDE_SIMPLE)
@@ -13,8 +14,9 @@ extern "C" {
 #else
 #include "lvgl/lvgl.h"
 #endif
-
-void lv_port_indev_init(void);
+    extern lv_indev_t *indev_touchpad;
+    extern lv_indev_t *indev_encoder;
+    void lv_port_indev_init(void);
 
 #ifdef __cplusplus
 } // extern "C"
