@@ -2,9 +2,19 @@
 // SPDX-FileCopyrightText: Copyright 2024 mzyy94
 
 #if defined(ESP_PLATFORM)
-#include <driver/pulse_cnt.h>
+#ifdef ARDUINO
 #include <driver/gpio.h>
-
+#include <driver/pcnt.h>
+class Encoder
+{
+public:
+    void setup();
+    int getCount(bool clear = false);
+    void reset();
+};
+#else
+#include <driver/gpio.h>
+#include <driver/pulse_cnt.h>
 class Encoder
 {
 private:
@@ -22,6 +32,7 @@ public:
     int getCount(bool clear = false);
     void reset();
 };
+#endif
 #else
 class Encoder
 {
