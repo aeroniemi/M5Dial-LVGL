@@ -16,6 +16,7 @@ extern "C"
 #endif
     extern lv_indev_t *indev_touchpad;
     extern lv_indev_t *indev_encoder;
+    extern lv_indev_t *indev_encoder_4th;
     void lv_port_indev_init(void);
 
 #ifdef __cplusplus
